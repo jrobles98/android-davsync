@@ -15,8 +15,8 @@ public class NewMediaReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		Log.d("davsync", "received pic or video intent");
 
-		boolean isNewPic = android.hardware.Camera.ACTION_NEW_PICTURE.equals(intent.getAction());
-		boolean isNewVid = android.hardware.Camera.ACTION_NEW_VIDEO.equals(intent.getAction());
+		boolean isNewPic = intent.getAction().endsWith("NEW_PICTURE");
+		boolean isNewVid = intent.getAction().endsWith("NEW_VIDEO");
 
 		if (!isNewPic && !isNewVid) return;
 
