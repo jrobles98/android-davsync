@@ -168,9 +168,10 @@ public class UploadService extends IntentService {
 			}
 
 			String strMaxFileSize = preferences.getString("auto_sync_max_filesize", null);
-			int maxFileSize = strMaxFileSize != null ? Integer.parseInt(strMaxFileSize)
-					: Integer.MAX_VALUE;
-			if (fileSize >= maxFileSize * 1048576) {
+			long maxFileSize = strMaxFileSize != null ? Integer.parseInt(strMaxFileSize) * 1048576
+					: 0;
+			maxFileSize = maxFileSize > 0 ? maxFileSize : Long.MAX_VALUE;
+			if (fileSize >= maxFileSize) {
 				progressNotification.notifyError("File is too large");
 				return;
 			}
