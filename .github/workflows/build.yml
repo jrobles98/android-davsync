@@ -18,6 +18,6 @@ jobs:
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: Build Artifacts
-          path: app/build/outputs/
+          name: android-davsync
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
 
