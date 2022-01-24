@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "net.zekjur.davsync"
         minSdkVersion 14
-        targetSdkVersion 22
+        targetSdkVersion 29
     }
 
     buildTypes {
