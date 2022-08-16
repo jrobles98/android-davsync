@@ -95,3 +95,4 @@ one:
 
 Then, `chown www-data.www-data /home/michael/pictures/dav/` and you should be
 good to go. Use “cadaver” as a command line WebDAV client to verify your setup.
+
